@@ -1,0 +1,19 @@
+; Demo 05: Reproducible run template
+globals [ run-id ]
+
+to setup
+  clear-all
+  set run-id 1
+  random-seed 12345
+  ; model initialization omitted
+  reset-ticks
+end
+
+to go
+  ; model logic omitted
+  if ticks = 500 [
+    export-world (word "run-" run-id ".csv")
+    stop
+  ]
+  tick
+end

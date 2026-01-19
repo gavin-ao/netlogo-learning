@@ -1,0 +1,18 @@
+; Demo 03: Basic plotting with to-report
+to-report wolf-count
+  report count wolves
+end
+
+to-report sheep-count
+  report count sheep
+end
+
+to go
+  ; movement and predation logic omitted
+  set-current-plot "Population"
+  set-current-plot-pen "wolves"
+  plot wolf-count
+  set-current-plot-pen "sheep"
+  plot sheep-count
+  tick
+end
