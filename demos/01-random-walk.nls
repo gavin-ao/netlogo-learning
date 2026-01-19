@@ -1,0 +1,25 @@
+; Demo 01: Random walk with energy
+globals [ steps ]
+turtles-own [ energy ]
+
+to setup
+  clear-all
+  set steps 0
+  create-turtles 50 [
+    setxy random-xcor random-ycor
+    set energy 20
+    set color green
+  ]
+  reset-ticks
+end
+
+to go
+  ask turtles [
+    rt random 360
+    fd 1
+    set energy energy - 1
+    if energy <= 0 [ die ]
+  ]
+  set steps steps + 1
+  tick
+end
