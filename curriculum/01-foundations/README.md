@@ -7,6 +7,14 @@
 - 变量作用域：`globals` 与 `turtles-own` 的差异。  
 - 时间步：`tick` 与模型进度记录。  
 
+## 语法与核心概念速览
+- **过程定义**：`to setup ... end`、`to go ... end`（命令过程）；`to-report ... end`（报告过程）。  
+- **命令与报告**：命令改变状态（如 `set`、`ask`、`create-turtles`），报告返回值（如 `count`、`mean`）。  
+- **作用域与所有权**：`globals` 属于全局；`turtles-own`/`patches-own`/`links-own` 属于对应 agent。  
+- **并行思维**：`ask turtles [ ... ]` 让每个 turtle “同时”执行规则（概念并行）。  
+- **控制流**：`if`、`ifelse`、`repeat`、`while`、`foreach`。  
+- **列表与集合**：`list`、`sentence`、`n-of`、`one-of`。  
+
 ## 实践任务（建议 5 课时）
 1. **认识界面**：打开 Models Library 的 “Wolf Sheep Predation”，观察按钮、slider、plot 的作用。  
 2. **语法与流程**：写 `setup` / `go` 让 turtles 随机移动。  
