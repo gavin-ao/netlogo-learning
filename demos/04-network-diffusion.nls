@@ -1,0 +1,27 @@
+; Demo 04: Network diffusion
+breed [ persons person ]
+persons-own [ informed? ]
+
+to setup
+  clear-all
+  create-persons 100 [
+    setxy random-xcor random-ycor
+    set informed? false
+    set color blue
+  ]
+  ask n-of 1 persons [ set informed? true set color red ]
+  ask persons [
+    create-links-with n-of 3 other persons
+  ]
+  reset-ticks
+end
+
+to go
+  ask persons with [ informed? ] [
+    ask link-neighbors [
+      set informed? true
+      set color red
+    ]
+  ]
+  tick
+end
